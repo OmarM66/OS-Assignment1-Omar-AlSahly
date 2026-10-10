@@ -130,80 +130,24 @@
 ## Your Development Log
 
 ### Entry 1 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
+I reviewed the starter code and the assignment requirements. I focused on understanding how the Round Robin CPU scheduling algorithm works and how processes are added to the ready queue. I also reviewed the existing Java classes before making changes.
 
 ### Entry 2 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
+I implemented the random priority feature for each process. The priority is generated between 1 and 10 and displayed when the process enters the ready queue. I checked that the ready queue still follows FIFO order instead of scheduling processes based on priority.
 
 ### Entry 3 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
+I added a counter to track the number of times a process thread starts running. I also added the waiting time calculation using System.currentTimeMillis(). I reviewed the scheduler logic to understand when the counter and waiting time should be updated.
 ---
 
 ### Entry 4 - [Date and Time]
-**What I did**:
 
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
+---I added the final summary table showing each process name, burst time, waiting time, and turnaround time. I checked that turnaround time is calculated by adding waiting time and burst time. I also ran the program to check the output and verify that the processes completed.
 
 ### Entry 5 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
+I tested the program with multiple processes and reviewed the final execution output. The program displayed the process priorities, scheduling progress, total counter value, and final timing table. I reviewed the implementation to prepare for explaining the code and its threading concepts.
 ---
 
 ### Entry 6 - [Optional - Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
 
 ---
 
@@ -290,7 +234,7 @@ Systems that divide processing time across several tasks can be modeled using ro
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+A process is a program in execution with its own resources and memory space, while a thread is a unit of execution within a process. In my Java simulation, the Process class implements Runnable, and each process is executed using a Java Thread. The scheduler creates threads and uses start() to execute them. It also uses join() to wait until the current thread finishes its time slice before scheduling the next one.
 
 ## Question 2: Ready Queue Behavior
 
@@ -302,7 +246,7 @@ Systems that divide processing time across several tasks can be modeled using ro
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+My scheduler uses a Queue<Thread> implemented with a LinkedList to maintain FIFO order. When a process does not finish within its time quantum, it is added to the end of the ready queue if other processes are waiting. For example, P1 used its first 4000 ms quantum and had 539 ms remaining, so it was placed at the end of the queue. Its priority was displayed as 8, but the scheduler still followed FIFO order rather than selecting processes according to priority. This behavior demonstrates how Round Robin scheduling gives processes turns to use the CPU.
 
 Example from my output:
 ```
@@ -319,7 +263,7 @@ Example from my output:
 > 💡 **TIP:** Follow P1 through the code: created in `addProcessToQueue()`, started in the scheduler loop, sleeping inside `run()`, and the main thread waiting on `join()`. Remember that **the main thread waits** on `join()`, while **P1's thread sleeps** in `Thread.sleep()`. Be clear about which thread is in which state.
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
-
+In my simulation, a process thread is created when the scheduler adds a process to the ready queue. When the scheduler selects it, start() begins execution, and the run() method simulates a time slice using Thread.sleep(). The scheduler calls join() to wait for that thread to finish its time slice. If the process still has remaining time, a new thread is created for its next turn because a Java thread cannot be started again after it has terminated. The simulation continues until all processes have completed.
 1. **New**: [When is P1 in the New state?]
 
 2. **Runnable**: [When does P1 become Runnable?]
@@ -337,8 +281,8 @@ Example from my output:
 > 💡 **TIP:** Relate each example back to your simulation: what plays the role of the "process", the "time quantum" and the "context switch" in that scenario?
 
 **Your Answer:** *(3-5 sentences per example)*
-
-### Example 1 (operating-system level): [Name of scenario]
+Round Robin scheduling is useful in time-sharing systems where multiple processes need fair access to the CPU. For example, an operating system may use time slices to give different interactive applications opportunities to run. In my simulation, the time quantum was 4000 ms, and the scheduler processed 18 processes in FIFO order. The output showed that all processes completed and reported 35 counted thread starts as context switches. This demonstrates how time slicing can share CPU time among multiple processes, although the counter in my code measures thread starts rather than actual operating-system context switches.
+### Example 1 (operating-system level):
 
 **Description**:
 [Describe the real-world scenario.]
