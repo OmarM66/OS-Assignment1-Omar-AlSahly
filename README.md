@@ -560,7 +560,7 @@ Everything else (name, student ID, development log, reflection, answers, and the
 
 ### Before You Submit - Final Checklist:
 
-- [ ] Repository is **PUBLIC** (check Settings → Visibility)
+- [ ] Repository is **PUBLIC** (check Settings → Visibility)link ->  https://github.com/OmarM66/OS-Assignment1-Omar-AlSahly.git
 - [ ] Student ID is set correctly in `SchedulerSimulation.java` (line 150)
 - [ ] Code compiles without errors: `javac SchedulerSimulation.java`
 - [ ] Code runs successfully: `java SchedulerSimulation`
