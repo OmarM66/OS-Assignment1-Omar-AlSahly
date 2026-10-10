@@ -76,7 +76,7 @@
 
 | # | Commit | Example message |
 |:-:|--------|-----------------|
-| 1 | Student ID set | `Set my student ID: 441234567` |
+| 1 | Student ID set | `444050133` |
 | 2 | Feature 1: Priority | `Feature 1: Added priority field to Process class` |
 | 3 | Feature 2: Context switches | `Feature 2: Implemented context switch counter` |
 | 4 | Feature 3: Waiting time | `Feature 3: Added waiting time tracking and summary table` |
