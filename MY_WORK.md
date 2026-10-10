@@ -29,10 +29,10 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
+| **Full Name** | Omar Mohammed AlSahly] |
+| **Student ID** | [444050133] |
+| **University Email** | 444050133@std.psau.edu.sa |
+| **GitHub Username** | [OmarM66] |
 | **Repository Link** | [Paste your repository link here] |
  
 ---
@@ -237,7 +237,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+discovered that a Java application can use several threads to do tasks thanks to multithreading. I discovered that a class can declare its task inside the run() method by implementing Runnable. While Thread.join() enables another thread to wait for it to finish, Thread.start() initiates a new thread. I also discovered that the current thread is momentarily paused by using Thread.sleep(). The scheduler in this assignment simulates processes receiving CPU time in Round-Robin order using these techniques. This made it easier for me to comprehend how operating-system scheduling ideas relate to Java threads.
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -245,23 +245,20 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
-
+Understanding how an incomplete process returns to the ready queue after utilizing its time quantum was the most difficult aspect. To determine when a process should be scheduled again and when it has completed, I had to follow the scheduler's logic. A process may need to wait between executions, therefore monitoring waiting time is also important. I had to note when the process joined the queue and figure out how long it waited before restarting. I was able to comprehend how these phases interact by going over the queue-handling code. I now have a better understanding of Round-Robin scheduling thanks to this assignment.
 ## Question 3: How did you overcome the challenges you faced?
 
 > 💡 **TIP:** Describe your method: reading documentation, adding `System.out.println` to debug, re-reading the README, testing after each small change, asking for help.
 
 **Your Answer:** *(5-7 sentences)*
-
-[Write your answer here.]
+Instead of attempting to comprehend the entire program at once, I overcome the difficulties by going over the code in manageable chunks. I concentrated on the core scheduling loop, addProcessToQueue(), and the Process class. I examined how the program generates threads, initiates them, waits for them to complete, and determines if a process should be added back to the queue. After that, I executed the program and contrasted its results with the features' anticipated behavior. This made it easier for me to see the relationship between the output and the code. I discovered that debugging a multithreaded software requires thorough code reading and testing.
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
 > 💡 **TIP:** Use real applications you know (web browser, game, mobile app, music player) and connect each one to what you built here.
 
 **Your Answer:** *(5-7 sentences)*
-
-[Write your answer here.]
+Systems that divide processing time across several tasks can be modeled using round-robin scheduling. To prevent one job from using the CPU endlessly, an operating system could, for instance, assign a time slice to each ready task. The way interactive systems distribute attention among multiple tasks can be explained by the same general concept. Java threads can also be used for background work in an application or for managing client requests. In the scheduling paradigm, a context switch denotes the transition from one active job to another, whilst the time quantum represents the permitted execution interval. I was able to make the connection between Java thread activities and the more general concepts of CPU scheduling thanks to this assignment.
 
 ### Optional: What would you like to learn more about?
 
